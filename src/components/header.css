@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  height: 40px;
+  background-color: #4caf50;
+}
+
+.headerLink {
+  text-decoration: none;
+}
+
+.left h1 {
+  margin: 0;
+}
+
+.appTitle {
+  color: white;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.right {
+  margin-left: auto;
+}
+
+.appTask {
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+.addButton {
+  border: none;
+}

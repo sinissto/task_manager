@@ -1,10 +1,11 @@
-import "./App.css";
+import Header from "./components/Header.jsx";
 
 function App() {
   return (
-    <>
-      <h1>Task Manager Application</h1>
-    </>
+    <div>
+      <Header />
+      <h1 style={{ textAlign: "center" }}>Manage Tasks</h1>
+    </div>
   );
 }
 
