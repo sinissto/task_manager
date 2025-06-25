@@ -1,3 +1,4 @@
+import "./addNewTask.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
@@ -195,23 +196,30 @@ const AddNewTask = () => {
 
               <div>
                 <ul className="emailList">
-                  {emailsList.map((email, index) => (
-                    <div
-                      key={index}
-                      data-testid={`email-${index}`}
-                      className={"eachEmail"}
-                    >
-                      <p>{email.toUpperCase()}</p>
-                      <button
-                        className={"removeEmailBtn"}
-                        type={"button"}
-                        onClick={() => handleRemoveEmail(index)}
-                        data-testid={`removeEmailBtn-${index}`}
-                      >
-                        &times;
-                      </button>
-                    </div>
-                  ))}
+                  {emailsList.map((email, index) => {
+                    return (
+                      <>
+                        {email && (
+                          <li
+                            key={index}
+                            data-testid={`email-${index}`}
+                            className={"eachEmail"}
+                          >
+                            <p>{email.toUpperCase()}</p>
+
+                            <button
+                              className={"removeEmailBtn"}
+                              type={"button"}
+                              onClick={() => handleRemoveEmail(index)}
+                              data-testid={`removeEmailBtn-${index}`}
+                            >
+                              &times;
+                            </button>
+                          </li>
+                        )}
+                      </>
+                    );
+                  })}
                 </ul>
               </div>
             </div>
