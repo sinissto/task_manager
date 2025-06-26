@@ -12,7 +12,15 @@ const ListTasks = () => {
     if (existingTasks) setTasksList(JSON.parse(existingTasks));
   }, []);
 
-  const handleTaskStatusChange = (task, newStatus) => {};
+  const handleTaskStatusChange = (task, newStatus) => {
+    const taskIndex = tasksList.findIndex((item) => item.id === task.id);
+    if (taskIndex !== -1) {
+      const updatedTasks = [...tasksList];
+      updatedTasks[taskIndex].taskStatus = newStatus;
+      setTasksList(updatedTasks);
+      localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+    }
+  };
 
   const handleEditTask = (task) => {};
 
