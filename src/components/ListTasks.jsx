@@ -27,7 +27,15 @@ const ListTasks = () => {
     setShowUpdatePopup(true);
   };
 
-  const handleDeleteTask = (taskId) => {};
+  const handleDeleteTask = (taskId) => {
+    const taskToDeleteIndex = tasksList.findIndex((task) => task.id === taskId);
+    if (taskToDeleteIndex !== -1) {
+      const updatedTasks = [...tasksList];
+      updatedTasks.splice(taskToDeleteIndex, 1);
+      setTasksList(updatedTasks);
+      localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+    }
+  };
 
   const handleCloseUpdatePopup = () => {};
 
