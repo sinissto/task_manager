@@ -1,0 +1,73 @@
+.tasksContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 50px;
+}
+
+.container {
+  display: flex;
+  background-color: #c9c9c937;
+  border: 1px solid #cccccc4c;
+  margin: 50px 50px 0 50px;
+}
+
+.taskItem {
+  flex-basis: calc(33.33% - 50px);
+  margin: 10px;
+}
+
+.infoColumn {
+  flex: 9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+.taskRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.deleteButton {
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.updateTaskOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  z-index: 1; /* Place the overlay on top of everything else */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Popup styles */
+.updateTaskPopup {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px 50px 20px 50px;
+  width: 900px;
+}

@@ -59,7 +59,7 @@ const ListTasks = () => {
         ) : (
           tasksList.map((task, index) => {
             return (
-              <div key={index} className={"taskItemContainer"}>
+              <div key={index} className={"container taskItem"}>
                 <div className="infoColumn">
                   <div className="taskRow">
                     <h2 className={"taskTitle"}>{task.taskTitle}</h2>
