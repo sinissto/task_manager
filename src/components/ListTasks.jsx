@@ -37,7 +37,9 @@ const ListTasks = () => {
     }
   };
 
-  const handleCloseUpdatePopup = () => {};
+  const handleCloseUpdatePopup = () => {
+    setShowUpdatePopup(false);
+  };
 
   return (
     <>
