@@ -22,7 +22,10 @@ const ListTasks = () => {
     }
   };
 
-  const handleEditTask = (task) => {};
+  const handleEditTask = (task) => {
+    setSelectedTask(task);
+    setShowUpdatePopup(true);
+  };
 
   const handleDeleteTask = (taskId) => {};
 
