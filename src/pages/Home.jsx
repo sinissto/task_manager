@@ -1,5 +1,5 @@
-import ListTasks from "../components/ListTasks";
 import "./styles.css";
+import ListTasks from "../components/ListTasks.jsx";
 
 const Home = () => {
   return (

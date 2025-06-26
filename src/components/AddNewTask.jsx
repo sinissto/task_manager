@@ -88,6 +88,7 @@ const AddNewTask = () => {
 
     const taskId = uuidv4();
     const existingTasks = localStorage.getItem("tasks");
+    console.log(existingTasks);
 
     const newTask = {
       id: taskId,
@@ -98,9 +99,14 @@ const AddNewTask = () => {
       taskCompleted,
     };
 
+    console.log(newTask);
+    console.log(existingTasks);
+
     const updatedTasks = existingTasks
       ? JSON.parse(existingTasks).concat(newTask)
       : [newTask];
+
+    console.log(updatedTasks);
 
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
 
@@ -110,6 +116,7 @@ const AddNewTask = () => {
     setEmailsList([]);
     setTaskCompleted(false);
 
+    console.log("trebalo bi da preusmeri");
     navigate("/");
   };
 
@@ -196,30 +203,27 @@ const AddNewTask = () => {
 
               <div>
                 <ul className="emailList">
-                  {emailsList.map((email, index) => {
-                    return (
-                      <>
-                        {email && (
-                          <li
-                            key={index}
-                            data-testid={`email-${index}`}
-                            className={"eachEmail"}
+                  {emailsList.map((email, index) => (
+                    <li
+                      key={index}
+                      data-testid={`email-${index}`}
+                      className={"eachEmail"}
+                    >
+                      {email && (
+                        <div>
+                          <p>{email.toUpperCase()}</p>
+                          <button
+                            className={"removeEmailBtn"}
+                            type={"button"}
+                            onClick={() => handleRemoveEmail(index)}
+                            data-testid={`removeEmailBtn-${index}`}
                           >
-                            <p>{email.toUpperCase()}</p>
-
-                            <button
-                              className={"removeEmailBtn"}
-                              type={"button"}
-                              onClick={() => handleRemoveEmail(index)}
-                              data-testid={`removeEmailBtn-${index}`}
-                            >
-                              &times;
-                            </button>
-                          </li>
-                        )}
-                      </>
-                    );
-                  })}
+                            &times;
+                          </button>
+                        </div>
+                      )}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
