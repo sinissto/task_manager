@@ -99,14 +99,9 @@ const AddNewTask = () => {
       taskCompleted,
     };
 
-    console.log(newTask);
-    console.log(existingTasks);
-
     const updatedTasks = existingTasks
       ? JSON.parse(existingTasks).concat(newTask)
       : [newTask];
-
-    console.log(updatedTasks);
 
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
 
@@ -116,7 +111,6 @@ const AddNewTask = () => {
     setEmailsList([]);
     setTaskCompleted(false);
 
-    console.log("trebalo bi da preusmeri");
     navigate("/");
   };
 
